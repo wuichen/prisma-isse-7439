@@ -5,8 +5,8 @@ export const PostCreateOneMutation = mutationField('createOnePost', {
   args: {
     data: nonNull('PostCreateInput'),
   },
-  resolve(_parent, { data }, { prisma1, select }) {
-    return prisma1.post.create({
+  resolve(_parent, { data }, { prisma, select }) {
+    return prisma.post.create({
       data,
       ...select,
     })

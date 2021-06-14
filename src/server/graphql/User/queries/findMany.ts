@@ -10,8 +10,8 @@ export const UserFindManyQuery = queryField('findManyUser', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.user.findMany({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.user.findMany({
       ...args,
       ...select,
     })

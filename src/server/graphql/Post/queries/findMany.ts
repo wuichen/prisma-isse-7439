@@ -10,8 +10,8 @@ export const PostFindManyQuery = queryField('findManyPost', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.post.findMany({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.post.findMany({
       ...args,
       ...select,
     })

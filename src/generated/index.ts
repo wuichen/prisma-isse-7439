@@ -22,232 +22,6 @@ export type Scalars = {
   Json: any;
 };
 
-export type Admin = {
-  __typename?: 'Admin';
-  createdAt: Scalars['DateTime'];
-  email: Scalars['String'];
-  id: Scalars['Int'];
-  logs: Array<Log>;
-  name?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-};
-
-
-export type AdminLogsArgs = {
-  cursor?: Maybe<LogWhereUniqueInput>;
-  distinct?: Maybe<LogScalarFieldEnum>;
-  orderBy?: Maybe<LogOrderByInput>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<LogWhereInput>;
-};
-
-export type AdminAvgAggregateOutputType = {
-  __typename?: 'AdminAvgAggregateOutputType';
-  id?: Maybe<Scalars['Float']>;
-};
-
-export type AdminCountAggregateOutputType = {
-  __typename?: 'AdminCountAggregateOutputType';
-  _all: Scalars['Int'];
-  createdAt: Scalars['Int'];
-  email: Scalars['Int'];
-  id: Scalars['Int'];
-  name: Scalars['Int'];
-  password: Scalars['Int'];
-};
-
-export type AdminCreateInput = {
-  createdAt?: Maybe<Scalars['DateTime']>;
-  email: Scalars['String'];
-  logs?: Maybe<LogCreateNestedManyWithoutAuthorInput>;
-  name?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-};
-
-export type AdminCreateNestedOneWithoutLogsInput = {
-  connect?: Maybe<AdminWhereUniqueInput>;
-  connectOrCreate?: Maybe<AdminCreateOrConnectWithoutLogsInput>;
-  create?: Maybe<AdminUncheckedCreateWithoutLogsInput>;
-};
-
-export type AdminCreateOrConnectWithoutLogsInput = {
-  create: AdminUncheckedCreateWithoutLogsInput;
-  where: AdminWhereUniqueInput;
-};
-
-export type AdminCreateWithoutLogsInput = {
-  createdAt?: Maybe<Scalars['DateTime']>;
-  email: Scalars['String'];
-  name?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-};
-
-export type AdminMaxAggregateOutputType = {
-  __typename?: 'AdminMaxAggregateOutputType';
-  createdAt?: Maybe<Scalars['DateTime']>;
-  email?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
-  password?: Maybe<Scalars['String']>;
-};
-
-export type AdminMinAggregateOutputType = {
-  __typename?: 'AdminMinAggregateOutputType';
-  createdAt?: Maybe<Scalars['DateTime']>;
-  email?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
-  password?: Maybe<Scalars['String']>;
-};
-
-export type AdminOrderByInput = {
-  createdAt?: Maybe<SortOrder>;
-  email?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  name?: Maybe<SortOrder>;
-  password?: Maybe<SortOrder>;
-};
-
-export type AdminRelationFilter = {
-  is?: Maybe<AdminWhereInput>;
-  isNot?: Maybe<AdminWhereInput>;
-};
-
-export enum AdminScalarFieldEnum {
-  CreatedAt = 'createdAt',
-  Email = 'email',
-  Id = 'id',
-  Name = 'name',
-  Password = 'password'
-}
-
-export type AdminScalarWhereWithAggregatesInput = {
-  AND?: Maybe<Array<Maybe<AdminScalarWhereWithAggregatesInput>>>;
-  NOT?: Maybe<Array<Maybe<AdminScalarWhereWithAggregatesInput>>>;
-  OR?: Maybe<Array<Maybe<AdminScalarWhereWithAggregatesInput>>>;
-  createdAt?: Maybe<DateTimeWithAggregatesFilter>;
-  email?: Maybe<StringWithAggregatesFilter>;
-  id?: Maybe<IntWithAggregatesFilter>;
-  name?: Maybe<StringNullableWithAggregatesFilter>;
-  password?: Maybe<StringWithAggregatesFilter>;
-};
-
-export type AdminSumAggregateOutputType = {
-  __typename?: 'AdminSumAggregateOutputType';
-  id?: Maybe<Scalars['Int']>;
-};
-
-export type AdminUncheckedCreateInput = {
-  createdAt?: Maybe<Scalars['DateTime']>;
-  email: Scalars['String'];
-  id?: Maybe<Scalars['Int']>;
-  logs?: Maybe<LogUncheckedCreateNestedManyWithoutAuthorInput>;
-  name?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-};
-
-export type AdminUncheckedCreateWithoutLogsInput = {
-  createdAt?: Maybe<Scalars['DateTime']>;
-  email: Scalars['String'];
-  id?: Maybe<Scalars['Int']>;
-  name?: Maybe<Scalars['String']>;
-  password: Scalars['String'];
-};
-
-export type AdminUncheckedUpdateInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  email?: Maybe<StringFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  logs?: Maybe<LogUncheckedUpdateManyWithoutAuthorInput>;
-  name?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  password?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type AdminUncheckedUpdateManyInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  email?: Maybe<StringFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  name?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  password?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type AdminUncheckedUpdateWithoutLogsInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  email?: Maybe<StringFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  name?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  password?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type AdminUpdateInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  email?: Maybe<StringFieldUpdateOperationsInput>;
-  logs?: Maybe<LogUpdateManyWithoutAuthorInput>;
-  name?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  password?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type AdminUpdateManyMutationInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  email?: Maybe<StringFieldUpdateOperationsInput>;
-  name?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  password?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type AdminUpdateOneWithoutLogsInput = {
-  connect?: Maybe<AdminWhereUniqueInput>;
-  connectOrCreate?: Maybe<AdminCreateOrConnectWithoutLogsInput>;
-  create?: Maybe<AdminUncheckedCreateWithoutLogsInput>;
-  delete?: Maybe<Scalars['Boolean']>;
-  disconnect?: Maybe<Scalars['Boolean']>;
-  update?: Maybe<AdminUncheckedUpdateWithoutLogsInput>;
-  upsert?: Maybe<AdminUpsertWithoutLogsInput>;
-};
-
-export type AdminUpdateWithoutLogsInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  email?: Maybe<StringFieldUpdateOperationsInput>;
-  name?: Maybe<NullableStringFieldUpdateOperationsInput>;
-  password?: Maybe<StringFieldUpdateOperationsInput>;
-};
-
-export type AdminUpsertWithoutLogsInput = {
-  create: AdminUncheckedCreateWithoutLogsInput;
-  update: AdminUncheckedUpdateWithoutLogsInput;
-};
-
-export type AdminWhereInput = {
-  AND?: Maybe<Array<Maybe<AdminWhereInput>>>;
-  NOT?: Maybe<Array<Maybe<AdminWhereInput>>>;
-  OR?: Maybe<Array<Maybe<AdminWhereInput>>>;
-  createdAt?: Maybe<DateTimeFilter>;
-  email?: Maybe<StringFilter>;
-  id?: Maybe<IntFilter>;
-  logs?: Maybe<LogListRelationFilter>;
-  name?: Maybe<StringNullableFilter>;
-  password?: Maybe<StringFilter>;
-};
-
-export type AdminWhereUniqueInput = {
-  email?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-};
-
-export type AggregateAdmin = {
-  __typename?: 'AggregateAdmin';
-  _avg?: Maybe<AdminAvgAggregateOutputType>;
-  _count?: Maybe<AdminCountAggregateOutputType>;
-  _max?: Maybe<AdminMaxAggregateOutputType>;
-  _min?: Maybe<AdminMinAggregateOutputType>;
-  _sum?: Maybe<AdminSumAggregateOutputType>;
-  avg?: Maybe<AdminAvgAggregateOutputType>;
-  count?: Maybe<AdminCountAggregateOutputType>;
-  max?: Maybe<AdminMaxAggregateOutputType>;
-  min?: Maybe<AdminMinAggregateOutputType>;
-  sum?: Maybe<AdminSumAggregateOutputType>;
-};
-
 export type AggregateComment = {
   __typename?: 'AggregateComment';
   _avg?: Maybe<CommentAvgAggregateOutputType>;
@@ -274,20 +48,6 @@ export type AggregateGroup = {
   max?: Maybe<GroupMaxAggregateOutputType>;
   min?: Maybe<GroupMinAggregateOutputType>;
   sum?: Maybe<GroupSumAggregateOutputType>;
-};
-
-export type AggregateLog = {
-  __typename?: 'AggregateLog';
-  _avg?: Maybe<LogAvgAggregateOutputType>;
-  _count?: Maybe<LogCountAggregateOutputType>;
-  _max?: Maybe<LogMaxAggregateOutputType>;
-  _min?: Maybe<LogMinAggregateOutputType>;
-  _sum?: Maybe<LogSumAggregateOutputType>;
-  avg?: Maybe<LogAvgAggregateOutputType>;
-  count?: Maybe<LogCountAggregateOutputType>;
-  max?: Maybe<LogMaxAggregateOutputType>;
-  min?: Maybe<LogMinAggregateOutputType>;
-  sum?: Maybe<LogSumAggregateOutputType>;
 };
 
 export type AggregatePost = {
@@ -766,6 +526,7 @@ export type Field = {
 
 export type Group = {
   __typename?: 'Group';
+  _count?: Maybe<GroupCountOutputType>;
   createdAt: Scalars['DateTime'];
   id: Scalars['Int'];
   name: Scalars['String'];
@@ -795,6 +556,11 @@ export type GroupCountAggregateOutputType = {
   id: Scalars['Int'];
   name: Scalars['Int'];
   updatedAt: Scalars['Int'];
+};
+
+export type GroupCountOutputType = {
+  __typename?: 'GroupCountOutputType';
+  users: Scalars['Int'];
 };
 
 export type GroupCreateInput = {
@@ -1036,252 +802,6 @@ export enum KindEnum {
   Scalar = 'scalar'
 }
 
-export type Log = {
-  __typename?: 'Log';
-  author?: Maybe<Admin>;
-  authorId?: Maybe<Scalars['Int']>;
-  createdAt: Scalars['DateTime'];
-  id: Scalars['Int'];
-  title: Scalars['String'];
-  updatedAt: Scalars['DateTime'];
-};
-
-export type LogAvgAggregateOutputType = {
-  __typename?: 'LogAvgAggregateOutputType';
-  authorId?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-};
-
-export type LogCountAggregateOutputType = {
-  __typename?: 'LogCountAggregateOutputType';
-  _all: Scalars['Int'];
-  authorId: Scalars['Int'];
-  createdAt: Scalars['Int'];
-  id: Scalars['Int'];
-  title: Scalars['Int'];
-  updatedAt: Scalars['Int'];
-};
-
-export type LogCreateInput = {
-  author?: Maybe<AdminCreateNestedOneWithoutLogsInput>;
-  createdAt?: Maybe<Scalars['DateTime']>;
-  title: Scalars['String'];
-  updatedAt?: Maybe<Scalars['DateTime']>;
-};
-
-export type LogCreateNestedManyWithoutAuthorInput = {
-  connect?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  connectOrCreate?: Maybe<Array<Maybe<LogCreateOrConnectWithoutAuthorInput>>>;
-  create?: Maybe<Array<Maybe<LogCreateWithoutAuthorInput>>>;
-};
-
-export type LogCreateOrConnectWithoutAuthorInput = {
-  create: LogUncheckedCreateWithoutAuthorInput;
-  where: LogWhereUniqueInput;
-};
-
-export type LogCreateWithoutAuthorInput = {
-  createdAt?: Maybe<Scalars['DateTime']>;
-  title: Scalars['String'];
-  updatedAt?: Maybe<Scalars['DateTime']>;
-};
-
-export type LogListRelationFilter = {
-  every?: Maybe<LogWhereInput>;
-  none?: Maybe<LogWhereInput>;
-  some?: Maybe<LogWhereInput>;
-};
-
-export type LogMaxAggregateOutputType = {
-  __typename?: 'LogMaxAggregateOutputType';
-  authorId?: Maybe<Scalars['Int']>;
-  createdAt?: Maybe<Scalars['DateTime']>;
-  id?: Maybe<Scalars['Int']>;
-  title?: Maybe<Scalars['String']>;
-  updatedAt?: Maybe<Scalars['DateTime']>;
-};
-
-export type LogMinAggregateOutputType = {
-  __typename?: 'LogMinAggregateOutputType';
-  authorId?: Maybe<Scalars['Int']>;
-  createdAt?: Maybe<Scalars['DateTime']>;
-  id?: Maybe<Scalars['Int']>;
-  title?: Maybe<Scalars['String']>;
-  updatedAt?: Maybe<Scalars['DateTime']>;
-};
-
-export type LogOrderByInput = {
-  authorId?: Maybe<SortOrder>;
-  createdAt?: Maybe<SortOrder>;
-  id?: Maybe<SortOrder>;
-  title?: Maybe<SortOrder>;
-  updatedAt?: Maybe<SortOrder>;
-};
-
-export enum LogScalarFieldEnum {
-  AuthorId = 'authorId',
-  CreatedAt = 'createdAt',
-  Id = 'id',
-  Title = 'title',
-  UpdatedAt = 'updatedAt'
-}
-
-export type LogScalarWhereInput = {
-  AND?: Maybe<Array<Maybe<LogScalarWhereInput>>>;
-  NOT?: Maybe<Array<Maybe<LogScalarWhereInput>>>;
-  OR?: Maybe<Array<Maybe<LogScalarWhereInput>>>;
-  authorId?: Maybe<IntNullableFilter>;
-  createdAt?: Maybe<DateTimeFilter>;
-  id?: Maybe<IntFilter>;
-  title?: Maybe<StringFilter>;
-  updatedAt?: Maybe<DateTimeFilter>;
-};
-
-export type LogScalarWhereWithAggregatesInput = {
-  AND?: Maybe<Array<Maybe<LogScalarWhereWithAggregatesInput>>>;
-  NOT?: Maybe<Array<Maybe<LogScalarWhereWithAggregatesInput>>>;
-  OR?: Maybe<Array<Maybe<LogScalarWhereWithAggregatesInput>>>;
-  authorId?: Maybe<IntNullableWithAggregatesFilter>;
-  createdAt?: Maybe<DateTimeWithAggregatesFilter>;
-  id?: Maybe<IntWithAggregatesFilter>;
-  title?: Maybe<StringWithAggregatesFilter>;
-  updatedAt?: Maybe<DateTimeWithAggregatesFilter>;
-};
-
-export type LogSumAggregateOutputType = {
-  __typename?: 'LogSumAggregateOutputType';
-  authorId?: Maybe<Scalars['Int']>;
-  id?: Maybe<Scalars['Int']>;
-};
-
-export type LogUncheckedCreateInput = {
-  authorId?: Maybe<Scalars['Int']>;
-  createdAt?: Maybe<Scalars['DateTime']>;
-  id?: Maybe<Scalars['Int']>;
-  title: Scalars['String'];
-  updatedAt?: Maybe<Scalars['DateTime']>;
-};
-
-export type LogUncheckedCreateNestedManyWithoutAuthorInput = {
-  connect?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  connectOrCreate?: Maybe<Array<Maybe<LogCreateOrConnectWithoutAuthorInput>>>;
-  create?: Maybe<Array<Maybe<LogCreateWithoutAuthorInput>>>;
-};
-
-export type LogUncheckedCreateWithoutAuthorInput = {
-  createdAt?: Maybe<Scalars['DateTime']>;
-  id?: Maybe<Scalars['Int']>;
-  title: Scalars['String'];
-  updatedAt?: Maybe<Scalars['DateTime']>;
-};
-
-export type LogUncheckedUpdateInput = {
-  authorId?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  title?: Maybe<StringFieldUpdateOperationsInput>;
-  updatedAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-};
-
-export type LogUncheckedUpdateManyInput = {
-  authorId?: Maybe<NullableIntFieldUpdateOperationsInput>;
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  title?: Maybe<StringFieldUpdateOperationsInput>;
-  updatedAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-};
-
-export type LogUncheckedUpdateManyWithoutAuthorInput = {
-  connect?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  connectOrCreate?: Maybe<Array<Maybe<LogCreateOrConnectWithoutAuthorInput>>>;
-  create?: Maybe<Array<Maybe<LogCreateWithoutAuthorInput>>>;
-  delete?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  deleteMany?: Maybe<Array<Maybe<LogScalarWhereInput>>>;
-  disconnect?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  set?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  update?: Maybe<Array<Maybe<LogUpdateWithWhereUniqueWithoutAuthorInput>>>;
-  updateMany?: Maybe<Array<Maybe<LogUpdateManyWithWhereWithoutAuthorInput>>>;
-  upsert?: Maybe<Array<Maybe<LogUpsertWithWhereUniqueWithoutAuthorInput>>>;
-};
-
-export type LogUncheckedUpdateManyWithoutLogsInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  title?: Maybe<StringFieldUpdateOperationsInput>;
-  updatedAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-};
-
-export type LogUncheckedUpdateWithoutAuthorInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  id?: Maybe<IntFieldUpdateOperationsInput>;
-  title?: Maybe<StringFieldUpdateOperationsInput>;
-  updatedAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-};
-
-export type LogUpdateInput = {
-  author?: Maybe<AdminUpdateOneWithoutLogsInput>;
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  title?: Maybe<StringFieldUpdateOperationsInput>;
-  updatedAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-};
-
-export type LogUpdateManyMutationInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  title?: Maybe<StringFieldUpdateOperationsInput>;
-  updatedAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-};
-
-export type LogUpdateManyWithWhereWithoutAuthorInput = {
-  data: LogUncheckedUpdateManyWithoutLogsInput;
-  where: LogScalarWhereInput;
-};
-
-export type LogUpdateManyWithoutAuthorInput = {
-  connect?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  connectOrCreate?: Maybe<Array<Maybe<LogCreateOrConnectWithoutAuthorInput>>>;
-  create?: Maybe<Array<Maybe<LogCreateWithoutAuthorInput>>>;
-  delete?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  deleteMany?: Maybe<Array<Maybe<LogScalarWhereInput>>>;
-  disconnect?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  set?: Maybe<Array<Maybe<LogWhereUniqueInput>>>;
-  update?: Maybe<Array<Maybe<LogUpdateWithWhereUniqueWithoutAuthorInput>>>;
-  updateMany?: Maybe<Array<Maybe<LogUpdateManyWithWhereWithoutAuthorInput>>>;
-  upsert?: Maybe<Array<Maybe<LogUpsertWithWhereUniqueWithoutAuthorInput>>>;
-};
-
-export type LogUpdateWithWhereUniqueWithoutAuthorInput = {
-  data: LogUncheckedUpdateWithoutAuthorInput;
-  where: LogWhereUniqueInput;
-};
-
-export type LogUpdateWithoutAuthorInput = {
-  createdAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-  title?: Maybe<StringFieldUpdateOperationsInput>;
-  updatedAt?: Maybe<DateTimeFieldUpdateOperationsInput>;
-};
-
-export type LogUpsertWithWhereUniqueWithoutAuthorInput = {
-  create: LogUncheckedCreateWithoutAuthorInput;
-  update: LogUncheckedUpdateWithoutAuthorInput;
-  where: LogWhereUniqueInput;
-};
-
-export type LogWhereInput = {
-  AND?: Maybe<Array<Maybe<LogWhereInput>>>;
-  NOT?: Maybe<Array<Maybe<LogWhereInput>>>;
-  OR?: Maybe<Array<Maybe<LogWhereInput>>>;
-  author?: Maybe<AdminWhereInput>;
-  authorId?: Maybe<IntNullableFilter>;
-  createdAt?: Maybe<DateTimeFilter>;
-  id?: Maybe<IntFilter>;
-  title?: Maybe<StringFilter>;
-  updatedAt?: Maybe<DateTimeFilter>;
-};
-
-export type LogWhereUniqueInput = {
-  id?: Maybe<Scalars['Int']>;
-};
-
 export type Model = {
   __typename?: 'Model';
   create: Scalars['Boolean'];
@@ -1296,53 +816,36 @@ export type Model = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createOneAdmin: Admin;
   createOneComment: Comment;
   createOneGroup: Group;
-  createOneLog: Log;
   createOnePost: Post;
   createOneUser: User;
-  deleteManyAdmin: BatchPayload;
   deleteManyComment: BatchPayload;
   deleteManyGroup: BatchPayload;
-  deleteManyLog: BatchPayload;
   deleteManyPost: BatchPayload;
   deleteManyUser: BatchPayload;
-  deleteOneAdmin?: Maybe<Admin>;
   deleteOneComment?: Maybe<Comment>;
   deleteOneGroup?: Maybe<Group>;
-  deleteOneLog?: Maybe<Log>;
   deleteOnePost?: Maybe<Post>;
   deleteOneUser?: Maybe<User>;
   login?: Maybe<User>;
   logout?: Maybe<Scalars['Boolean']>;
   signup?: Maybe<User>;
   updateField: Field;
-  updateManyAdmin: BatchPayload;
   updateManyComment: BatchPayload;
   updateManyGroup: BatchPayload;
-  updateManyLog: BatchPayload;
   updateManyPost: BatchPayload;
   updateManyUser: BatchPayload;
   updateModel: Model;
-  updateOneAdmin: Admin;
   updateOneComment: Comment;
   updateOneGroup: Group;
-  updateOneLog: Log;
   updateOnePost: Post;
   updateOneUser: User;
   updatePassword?: Maybe<Scalars['Boolean']>;
-  upsertOneAdmin: Admin;
   upsertOneComment: Comment;
   upsertOneGroup: Group;
-  upsertOneLog: Log;
   upsertOnePost: Post;
   upsertOneUser: User;
-};
-
-
-export type MutationCreateOneAdminArgs = {
-  data: AdminCreateInput;
 };
 
 
@@ -1356,11 +859,6 @@ export type MutationCreateOneGroupArgs = {
 };
 
 
-export type MutationCreateOneLogArgs = {
-  data: LogCreateInput;
-};
-
-
 export type MutationCreateOnePostArgs = {
   data: PostCreateInput;
 };
@@ -1368,11 +866,6 @@ export type MutationCreateOnePostArgs = {
 
 export type MutationCreateOneUserArgs = {
   data: UserCreateInput;
-};
-
-
-export type MutationDeleteManyAdminArgs = {
-  where?: Maybe<AdminWhereInput>;
 };
 
 
@@ -1386,11 +879,6 @@ export type MutationDeleteManyGroupArgs = {
 };
 
 
-export type MutationDeleteManyLogArgs = {
-  where?: Maybe<LogWhereInput>;
-};
-
-
 export type MutationDeleteManyPostArgs = {
   where?: Maybe<PostWhereInput>;
 };
@@ -1401,11 +889,6 @@ export type MutationDeleteManyUserArgs = {
 };
 
 
-export type MutationDeleteOneAdminArgs = {
-  where: AdminWhereUniqueInput;
-};
-
-
 export type MutationDeleteOneCommentArgs = {
   where: CommentWhereUniqueInput;
 };
@@ -1413,11 +896,6 @@ export type MutationDeleteOneCommentArgs = {
 
 export type MutationDeleteOneGroupArgs = {
   where: GroupWhereUniqueInput;
-};
-
-
-export type MutationDeleteOneLogArgs = {
-  where: LogWhereUniqueInput;
 };
 
 
@@ -1451,12 +929,6 @@ export type MutationUpdateFieldArgs = {
 };
 
 
-export type MutationUpdateManyAdminArgs = {
-  data: AdminUpdateManyMutationInput;
-  where?: Maybe<AdminWhereInput>;
-};
-
-
 export type MutationUpdateManyCommentArgs = {
   data: CommentUpdateManyMutationInput;
   where?: Maybe<CommentWhereInput>;
@@ -1466,12 +938,6 @@ export type MutationUpdateManyCommentArgs = {
 export type MutationUpdateManyGroupArgs = {
   data: GroupUpdateManyMutationInput;
   where?: Maybe<GroupWhereInput>;
-};
-
-
-export type MutationUpdateManyLogArgs = {
-  data: LogUpdateManyMutationInput;
-  where?: Maybe<LogWhereInput>;
 };
 
 
@@ -1493,12 +959,6 @@ export type MutationUpdateModelArgs = {
 };
 
 
-export type MutationUpdateOneAdminArgs = {
-  data: AdminUpdateInput;
-  where: AdminWhereUniqueInput;
-};
-
-
 export type MutationUpdateOneCommentArgs = {
   data: CommentUpdateInput;
   where: CommentWhereUniqueInput;
@@ -1508,12 +968,6 @@ export type MutationUpdateOneCommentArgs = {
 export type MutationUpdateOneGroupArgs = {
   data: GroupUpdateInput;
   where: GroupWhereUniqueInput;
-};
-
-
-export type MutationUpdateOneLogArgs = {
-  data: LogUpdateInput;
-  where: LogWhereUniqueInput;
 };
 
 
@@ -1535,13 +989,6 @@ export type MutationUpdatePasswordArgs = {
 };
 
 
-export type MutationUpsertOneAdminArgs = {
-  create: AdminCreateInput;
-  update: AdminUpdateInput;
-  where: AdminWhereUniqueInput;
-};
-
-
 export type MutationUpsertOneCommentArgs = {
   create: CommentCreateInput;
   update: CommentUpdateInput;
@@ -1553,13 +1000,6 @@ export type MutationUpsertOneGroupArgs = {
   create: GroupCreateInput;
   update: GroupUpdateInput;
   where: GroupWhereUniqueInput;
-};
-
-
-export type MutationUpsertOneLogArgs = {
-  create: LogCreateInput;
-  update: LogUpdateInput;
-  where: LogWhereUniqueInput;
 };
 
 
@@ -1788,6 +1228,7 @@ export type NullableStringFieldUpdateOperationsInput = {
 
 export type Post = {
   __typename?: 'Post';
+  _count?: Maybe<PostCountOutputType>;
   author?: Maybe<User>;
   authorId?: Maybe<Scalars['Int']>;
   comments: Array<Comment>;
@@ -1823,6 +1264,11 @@ export type PostCountAggregateOutputType = {
   published: Scalars['Int'];
   title: Scalars['Int'];
   updatedAt: Scalars['Int'];
+};
+
+export type PostCountOutputType = {
+  __typename?: 'PostCountOutputType';
+  comments: Scalars['Int'];
 };
 
 export type PostCreateInput = {
@@ -2137,48 +1583,28 @@ export type PostWhereUniqueInput = {
 
 export type Query = {
   __typename?: 'Query';
-  aggregateAdmin?: Maybe<AggregateAdmin>;
   aggregateComment?: Maybe<AggregateComment>;
   aggregateGroup?: Maybe<AggregateGroup>;
-  aggregateLog?: Maybe<AggregateLog>;
   aggregatePost?: Maybe<AggregatePost>;
   aggregateUser?: Maybe<AggregateUser>;
-  findFirstAdmin?: Maybe<Admin>;
   findFirstComment?: Maybe<Comment>;
   findFirstGroup?: Maybe<Group>;
-  findFirstLog?: Maybe<Log>;
   findFirstPost?: Maybe<Post>;
   findFirstUser?: Maybe<User>;
-  findManyAdmin: Array<Admin>;
-  findManyAdminCount: Scalars['Int'];
   findManyComment: Array<Comment>;
   findManyCommentCount: Scalars['Int'];
   findManyGroup: Array<Group>;
   findManyGroupCount: Scalars['Int'];
-  findManyLog: Array<Log>;
-  findManyLogCount: Scalars['Int'];
   findManyPost: Array<Post>;
   findManyPostCount: Scalars['Int'];
   findManyUser: Array<User>;
   findManyUserCount: Scalars['Int'];
-  findUniqueAdmin?: Maybe<Admin>;
   findUniqueComment?: Maybe<Comment>;
   findUniqueGroup?: Maybe<Group>;
-  findUniqueLog?: Maybe<Log>;
   findUniquePost?: Maybe<Post>;
   findUniqueUser?: Maybe<User>;
   getSchema: Schema;
   me?: Maybe<User>;
-};
-
-
-export type QueryAggregateAdminArgs = {
-  cursor?: Maybe<AdminWhereUniqueInput>;
-  distinct?: Maybe<AdminScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<AdminOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<AdminWhereInput>;
 };
 
 
@@ -2202,16 +1628,6 @@ export type QueryAggregateGroupArgs = {
 };
 
 
-export type QueryAggregateLogArgs = {
-  cursor?: Maybe<LogWhereUniqueInput>;
-  distinct?: Maybe<LogScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<LogOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<LogWhereInput>;
-};
-
-
 export type QueryAggregatePostArgs = {
   cursor?: Maybe<PostWhereUniqueInput>;
   distinct?: Maybe<PostScalarFieldEnum>;
@@ -2229,16 +1645,6 @@ export type QueryAggregateUserArgs = {
   skip?: Maybe<Scalars['Int']>;
   take?: Maybe<Scalars['Int']>;
   where?: Maybe<UserWhereInput>;
-};
-
-
-export type QueryFindFirstAdminArgs = {
-  cursor?: Maybe<AdminWhereUniqueInput>;
-  distinct?: Maybe<AdminScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<AdminOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<AdminWhereInput>;
 };
 
 
@@ -2262,16 +1668,6 @@ export type QueryFindFirstGroupArgs = {
 };
 
 
-export type QueryFindFirstLogArgs = {
-  cursor?: Maybe<LogWhereUniqueInput>;
-  distinct?: Maybe<LogScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<LogOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<LogWhereInput>;
-};
-
-
 export type QueryFindFirstPostArgs = {
   cursor?: Maybe<PostWhereUniqueInput>;
   distinct?: Maybe<PostScalarFieldEnum>;
@@ -2289,26 +1685,6 @@ export type QueryFindFirstUserArgs = {
   skip?: Maybe<Scalars['Int']>;
   take?: Maybe<Scalars['Int']>;
   where?: Maybe<UserWhereInput>;
-};
-
-
-export type QueryFindManyAdminArgs = {
-  cursor?: Maybe<AdminWhereUniqueInput>;
-  distinct?: Maybe<AdminScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<AdminOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<AdminWhereInput>;
-};
-
-
-export type QueryFindManyAdminCountArgs = {
-  cursor?: Maybe<AdminWhereUniqueInput>;
-  distinct?: Maybe<AdminScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<AdminOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<AdminWhereInput>;
 };
 
 
@@ -2352,26 +1728,6 @@ export type QueryFindManyGroupCountArgs = {
 };
 
 
-export type QueryFindManyLogArgs = {
-  cursor?: Maybe<LogWhereUniqueInput>;
-  distinct?: Maybe<LogScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<LogOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<LogWhereInput>;
-};
-
-
-export type QueryFindManyLogCountArgs = {
-  cursor?: Maybe<LogWhereUniqueInput>;
-  distinct?: Maybe<LogScalarFieldEnum>;
-  orderBy?: Maybe<Array<Maybe<LogOrderByInput>>>;
-  skip?: Maybe<Scalars['Int']>;
-  take?: Maybe<Scalars['Int']>;
-  where?: Maybe<LogWhereInput>;
-};
-
-
 export type QueryFindManyPostArgs = {
   cursor?: Maybe<PostWhereUniqueInput>;
   distinct?: Maybe<PostScalarFieldEnum>;
@@ -2412,11 +1768,6 @@ export type QueryFindManyUserCountArgs = {
 };
 
 
-export type QueryFindUniqueAdminArgs = {
-  where: AdminWhereUniqueInput;
-};
-
-
 export type QueryFindUniqueCommentArgs = {
   where: CommentWhereUniqueInput;
 };
@@ -2424,11 +1775,6 @@ export type QueryFindUniqueCommentArgs = {
 
 export type QueryFindUniqueGroupArgs = {
   where: GroupWhereUniqueInput;
-};
-
-
-export type QueryFindUniqueLogArgs = {
-  where: LogWhereUniqueInput;
 };
 
 
@@ -2557,6 +1903,7 @@ export type UpdateModelInput = {
 
 export type User = {
   __typename?: 'User';
+  _count?: Maybe<UserCountOutputType>;
   comments: Array<Comment>;
   createdAt: Scalars['DateTime'];
   email: Scalars['String'];
@@ -2603,6 +1950,12 @@ export type UserCountAggregateOutputType = {
   id: Scalars['Int'];
   name: Scalars['Int'];
   password: Scalars['Int'];
+};
+
+export type UserCountOutputType = {
+  __typename?: 'UserCountOutputType';
+  comments: Scalars['Int'];
+  posts: Scalars['Int'];
 };
 
 export type UserCreateInput = {

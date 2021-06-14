@@ -6,8 +6,8 @@ export const GroupUpdateOneMutation = mutationField('updateOneGroup', {
     where: nonNull('GroupWhereUniqueInput'),
     data: nonNull('GroupUpdateInput'),
   },
-  resolve(_parent, { data, where }, { prisma1, select }) {
-    return prisma1.group.update({
+  resolve(_parent, { data, where }, { prisma, select }) {
+    return prisma.group.update({
       where,
       data,
       ...select,

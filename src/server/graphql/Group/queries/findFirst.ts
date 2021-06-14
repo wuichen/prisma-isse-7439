@@ -10,8 +10,8 @@ export const GroupFindFirstQuery = queryField('findFirstGroup', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.group.findFirst({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.group.findFirst({
       ...args,
       ...select,
     })

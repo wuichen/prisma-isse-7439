@@ -5,8 +5,8 @@ export const PostFindUniqueQuery = queryField('findUniquePost', {
   args: {
     where: nonNull('PostWhereUniqueInput'),
   },
-  resolve(_parent, { where }, { prisma1, select }) {
-    return prisma1.post.findUnique({
+  resolve(_parent, { where }, { prisma, select }) {
+    return prisma.post.findUnique({
       where,
       ...select,
     })

@@ -5,8 +5,8 @@ export const CommentCreateOneMutation = mutationField('createOneComment', {
   args: {
     data: nonNull('CommentCreateInput'),
   },
-  resolve(_parent, { data }, { prisma1, select }) {
-    return prisma1.comment.create({
+  resolve(_parent, { data }, { prisma, select }) {
+    return prisma.comment.create({
       data,
       ...select,
     })

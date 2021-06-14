@@ -10,7 +10,7 @@ export const PostAggregateQuery = queryField('aggregatePost', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.post.aggregate({ ...args, ...select }) as any
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.post.aggregate({ ...args, ...select }) as any
   },
 })

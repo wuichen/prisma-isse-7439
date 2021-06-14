@@ -7,8 +7,8 @@ export const CommentUpsertOneMutation = mutationField('upsertOneComment', {
     create: nonNull('CommentCreateInput'),
     update: nonNull('CommentUpdateInput'),
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.comment.upsert({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.comment.upsert({
       ...args,
       ...select,
     })

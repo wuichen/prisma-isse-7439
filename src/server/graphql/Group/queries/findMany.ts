@@ -10,8 +10,8 @@ export const GroupFindManyQuery = queryField('findManyGroup', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.group.findMany({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.group.findMany({
       ...args,
       ...select,
     })

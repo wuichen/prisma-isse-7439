@@ -10,7 +10,7 @@ export const GroupAggregateQuery = queryField('aggregateGroup', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.group.aggregate({ ...args, ...select }) as any
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.group.aggregate({ ...args, ...select }) as any
   },
 })

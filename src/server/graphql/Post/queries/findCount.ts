@@ -10,7 +10,7 @@ export const PostFindCountQuery = queryField('findManyPostCount', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1 }) {
-    return prisma1.post.count(args as any)
+  resolve(_parent, args, { prisma }) {
+    return prisma.post.count(args as any)
   },
 })

@@ -5,9 +5,9 @@ export const UserDeleteOneMutation = mutationField('deleteOneUser', {
   args: {
     where: nonNull('UserWhereUniqueInput'),
   },
-  resolve: async (_parent, { where }, { prisma1, select }) => {
-    await prisma1.onDelete({ model: 'User', where })
-    return prisma1.user.delete({
+  resolve: async (_parent, { where }, { prisma, select }) => {
+    await prisma.onDelete({ model: 'User', where })
+    return prisma.user.delete({
       where,
       ...select,
     })

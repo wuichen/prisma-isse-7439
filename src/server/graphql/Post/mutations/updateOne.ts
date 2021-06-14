@@ -6,8 +6,8 @@ export const PostUpdateOneMutation = mutationField('updateOnePost', {
     where: nonNull('PostWhereUniqueInput'),
     data: nonNull('PostUpdateInput'),
   },
-  resolve(_parent, { data, where }, { prisma1, select }) {
-    return prisma1.post.update({
+  resolve(_parent, { data, where }, { prisma, select }) {
+    return prisma.post.update({
       where,
       data,
       ...select,

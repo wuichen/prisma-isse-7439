@@ -7,8 +7,8 @@ export const GroupUpsertOneMutation = mutationField('upsertOneGroup', {
     create: nonNull('GroupCreateInput'),
     update: nonNull('GroupUpdateInput'),
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.group.upsert({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.group.upsert({
       ...args,
       ...select,
     })

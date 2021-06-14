@@ -2,215 +2,6 @@
 ### Do not make changes to this file directly
 
 
-type Admin {
-  createdAt: DateTime!
-  email: String!
-  id: Int!
-  logs(cursor: LogWhereUniqueInput, distinct: LogScalarFieldEnum, orderBy: LogOrderByInput, skip: Int, take: Int, where: LogWhereInput): [Log!]!
-  name: String
-  password: String!
-}
-
-type AdminAvgAggregateOutputType {
-  id: Float
-}
-
-type AdminCountAggregateOutputType {
-  _all: Int!
-  createdAt: Int!
-  email: Int!
-  id: Int!
-  name: Int!
-  password: Int!
-}
-
-input AdminCreateInput {
-  createdAt: DateTime
-  email: String!
-  logs: LogCreateNestedManyWithoutAuthorInput
-  name: String
-  password: String!
-}
-
-input AdminCreateNestedOneWithoutLogsInput {
-  connect: AdminWhereUniqueInput
-  connectOrCreate: AdminCreateOrConnectWithoutLogsInput
-  create: AdminUncheckedCreateWithoutLogsInput
-}
-
-input AdminCreateOrConnectWithoutLogsInput {
-  create: AdminUncheckedCreateWithoutLogsInput!
-  where: AdminWhereUniqueInput!
-}
-
-input AdminCreateWithoutLogsInput {
-  createdAt: DateTime
-  email: String!
-  name: String
-  password: String!
-}
-
-type AdminMaxAggregateOutputType {
-  createdAt: DateTime
-  email: String
-  id: Int
-  name: String
-  password: String
-}
-
-type AdminMinAggregateOutputType {
-  createdAt: DateTime
-  email: String
-  id: Int
-  name: String
-  password: String
-}
-
-input AdminOrderByInput {
-  createdAt: SortOrder
-  email: SortOrder
-  id: SortOrder
-  name: SortOrder
-  password: SortOrder
-}
-
-input AdminRelationFilter {
-  is: AdminWhereInput
-  isNot: AdminWhereInput
-}
-
-enum AdminScalarFieldEnum {
-  createdAt
-  email
-  id
-  name
-  password
-}
-
-input AdminScalarWhereWithAggregatesInput {
-  AND: [AdminScalarWhereWithAggregatesInput]
-  NOT: [AdminScalarWhereWithAggregatesInput]
-  OR: [AdminScalarWhereWithAggregatesInput]
-  createdAt: DateTimeWithAggregatesFilter
-  email: StringWithAggregatesFilter
-  id: IntWithAggregatesFilter
-  name: StringNullableWithAggregatesFilter
-  password: StringWithAggregatesFilter
-}
-
-type AdminSumAggregateOutputType {
-  id: Int
-}
-
-input AdminUncheckedCreateInput {
-  createdAt: DateTime
-  email: String!
-  id: Int
-  logs: LogUncheckedCreateNestedManyWithoutAuthorInput
-  name: String
-  password: String!
-}
-
-input AdminUncheckedCreateWithoutLogsInput {
-  createdAt: DateTime
-  email: String!
-  id: Int
-  name: String
-  password: String!
-}
-
-input AdminUncheckedUpdateInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  email: StringFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  logs: LogUncheckedUpdateManyWithoutAuthorInput
-  name: NullableStringFieldUpdateOperationsInput
-  password: StringFieldUpdateOperationsInput
-}
-
-input AdminUncheckedUpdateManyInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  email: StringFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  name: NullableStringFieldUpdateOperationsInput
-  password: StringFieldUpdateOperationsInput
-}
-
-input AdminUncheckedUpdateWithoutLogsInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  email: StringFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  name: NullableStringFieldUpdateOperationsInput
-  password: StringFieldUpdateOperationsInput
-}
-
-input AdminUpdateInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  email: StringFieldUpdateOperationsInput
-  logs: LogUpdateManyWithoutAuthorInput
-  name: NullableStringFieldUpdateOperationsInput
-  password: StringFieldUpdateOperationsInput
-}
-
-input AdminUpdateManyMutationInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  email: StringFieldUpdateOperationsInput
-  name: NullableStringFieldUpdateOperationsInput
-  password: StringFieldUpdateOperationsInput
-}
-
-input AdminUpdateOneWithoutLogsInput {
-  connect: AdminWhereUniqueInput
-  connectOrCreate: AdminCreateOrConnectWithoutLogsInput
-  create: AdminUncheckedCreateWithoutLogsInput
-  delete: Boolean
-  disconnect: Boolean
-  update: AdminUncheckedUpdateWithoutLogsInput
-  upsert: AdminUpsertWithoutLogsInput
-}
-
-input AdminUpdateWithoutLogsInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  email: StringFieldUpdateOperationsInput
-  name: NullableStringFieldUpdateOperationsInput
-  password: StringFieldUpdateOperationsInput
-}
-
-input AdminUpsertWithoutLogsInput {
-  create: AdminUncheckedCreateWithoutLogsInput!
-  update: AdminUncheckedUpdateWithoutLogsInput!
-}
-
-input AdminWhereInput {
-  AND: [AdminWhereInput]
-  NOT: [AdminWhereInput]
-  OR: [AdminWhereInput]
-  createdAt: DateTimeFilter
-  email: StringFilter
-  id: IntFilter
-  logs: LogListRelationFilter
-  name: StringNullableFilter
-  password: StringFilter
-}
-
-input AdminWhereUniqueInput {
-  email: String
-  id: Int
-}
-
-type AggregateAdmin {
-  _avg: AdminAvgAggregateOutputType
-  _count: AdminCountAggregateOutputType
-  _max: AdminMaxAggregateOutputType
-  _min: AdminMinAggregateOutputType
-  _sum: AdminSumAggregateOutputType
-  avg: AdminAvgAggregateOutputType
-  count: AdminCountAggregateOutputType
-  max: AdminMaxAggregateOutputType
-  min: AdminMinAggregateOutputType
-  sum: AdminSumAggregateOutputType
-}
-
 type AggregateComment {
   _avg: CommentAvgAggregateOutputType
   _count: CommentCountAggregateOutputType
@@ -235,19 +26,6 @@ type AggregateGroup {
   max: GroupMaxAggregateOutputType
   min: GroupMinAggregateOutputType
   sum: GroupSumAggregateOutputType
-}
-
-type AggregateLog {
-  _avg: LogAvgAggregateOutputType
-  _count: LogCountAggregateOutputType
-  _max: LogMaxAggregateOutputType
-  _min: LogMinAggregateOutputType
-  _sum: LogSumAggregateOutputType
-  avg: LogAvgAggregateOutputType
-  count: LogCountAggregateOutputType
-  max: LogMaxAggregateOutputType
-  min: LogMinAggregateOutputType
-  sum: LogSumAggregateOutputType
 }
 
 type AggregatePost {
@@ -720,6 +498,7 @@ type Field {
 }
 
 type Group {
+  _count: GroupCountOutputType
   createdAt: DateTime!
   id: Int!
   name: String!
@@ -737,6 +516,10 @@ type GroupCountAggregateOutputType {
   id: Int!
   name: Int!
   updatedAt: Int!
+}
+
+type GroupCountOutputType {
+  users: Int!
 }
 
 input GroupCreateInput {
@@ -977,246 +760,6 @@ enum KindEnum {
   scalar
 }
 
-type Log {
-  author: Admin
-  authorId: Int
-  createdAt: DateTime!
-  id: Int!
-  title: String!
-  updatedAt: DateTime!
-}
-
-type LogAvgAggregateOutputType {
-  authorId: Float
-  id: Float
-}
-
-type LogCountAggregateOutputType {
-  _all: Int!
-  authorId: Int!
-  createdAt: Int!
-  id: Int!
-  title: Int!
-  updatedAt: Int!
-}
-
-input LogCreateInput {
-  author: AdminCreateNestedOneWithoutLogsInput
-  createdAt: DateTime
-  title: String!
-  updatedAt: DateTime
-}
-
-input LogCreateNestedManyWithoutAuthorInput {
-  connect: [LogWhereUniqueInput]
-  connectOrCreate: [LogCreateOrConnectWithoutAuthorInput]
-  create: [LogCreateWithoutAuthorInput]
-}
-
-input LogCreateOrConnectWithoutAuthorInput {
-  create: LogUncheckedCreateWithoutAuthorInput!
-  where: LogWhereUniqueInput!
-}
-
-input LogCreateWithoutAuthorInput {
-  createdAt: DateTime
-  title: String!
-  updatedAt: DateTime
-}
-
-input LogListRelationFilter {
-  every: LogWhereInput
-  none: LogWhereInput
-  some: LogWhereInput
-}
-
-type LogMaxAggregateOutputType {
-  authorId: Int
-  createdAt: DateTime
-  id: Int
-  title: String
-  updatedAt: DateTime
-}
-
-type LogMinAggregateOutputType {
-  authorId: Int
-  createdAt: DateTime
-  id: Int
-  title: String
-  updatedAt: DateTime
-}
-
-input LogOrderByInput {
-  authorId: SortOrder
-  createdAt: SortOrder
-  id: SortOrder
-  title: SortOrder
-  updatedAt: SortOrder
-}
-
-enum LogScalarFieldEnum {
-  authorId
-  createdAt
-  id
-  title
-  updatedAt
-}
-
-input LogScalarWhereInput {
-  AND: [LogScalarWhereInput]
-  NOT: [LogScalarWhereInput]
-  OR: [LogScalarWhereInput]
-  authorId: IntNullableFilter
-  createdAt: DateTimeFilter
-  id: IntFilter
-  title: StringFilter
-  updatedAt: DateTimeFilter
-}
-
-input LogScalarWhereWithAggregatesInput {
-  AND: [LogScalarWhereWithAggregatesInput]
-  NOT: [LogScalarWhereWithAggregatesInput]
-  OR: [LogScalarWhereWithAggregatesInput]
-  authorId: IntNullableWithAggregatesFilter
-  createdAt: DateTimeWithAggregatesFilter
-  id: IntWithAggregatesFilter
-  title: StringWithAggregatesFilter
-  updatedAt: DateTimeWithAggregatesFilter
-}
-
-type LogSumAggregateOutputType {
-  authorId: Int
-  id: Int
-}
-
-input LogUncheckedCreateInput {
-  authorId: Int
-  createdAt: DateTime
-  id: Int
-  title: String!
-  updatedAt: DateTime
-}
-
-input LogUncheckedCreateNestedManyWithoutAuthorInput {
-  connect: [LogWhereUniqueInput]
-  connectOrCreate: [LogCreateOrConnectWithoutAuthorInput]
-  create: [LogCreateWithoutAuthorInput]
-}
-
-input LogUncheckedCreateWithoutAuthorInput {
-  createdAt: DateTime
-  id: Int
-  title: String!
-  updatedAt: DateTime
-}
-
-input LogUncheckedUpdateInput {
-  authorId: NullableIntFieldUpdateOperationsInput
-  createdAt: DateTimeFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  title: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input LogUncheckedUpdateManyInput {
-  authorId: NullableIntFieldUpdateOperationsInput
-  createdAt: DateTimeFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  title: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input LogUncheckedUpdateManyWithoutAuthorInput {
-  connect: [LogWhereUniqueInput]
-  connectOrCreate: [LogCreateOrConnectWithoutAuthorInput]
-  create: [LogCreateWithoutAuthorInput]
-  delete: [LogWhereUniqueInput]
-  deleteMany: [LogScalarWhereInput]
-  disconnect: [LogWhereUniqueInput]
-  set: [LogWhereUniqueInput]
-  update: [LogUpdateWithWhereUniqueWithoutAuthorInput]
-  updateMany: [LogUpdateManyWithWhereWithoutAuthorInput]
-  upsert: [LogUpsertWithWhereUniqueWithoutAuthorInput]
-}
-
-input LogUncheckedUpdateManyWithoutLogsInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  title: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input LogUncheckedUpdateWithoutAuthorInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  id: IntFieldUpdateOperationsInput
-  title: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input LogUpdateInput {
-  author: AdminUpdateOneWithoutLogsInput
-  createdAt: DateTimeFieldUpdateOperationsInput
-  title: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input LogUpdateManyMutationInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  title: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input LogUpdateManyWithWhereWithoutAuthorInput {
-  data: LogUncheckedUpdateManyWithoutLogsInput!
-  where: LogScalarWhereInput!
-}
-
-input LogUpdateManyWithoutAuthorInput {
-  connect: [LogWhereUniqueInput]
-  connectOrCreate: [LogCreateOrConnectWithoutAuthorInput]
-  create: [LogCreateWithoutAuthorInput]
-  delete: [LogWhereUniqueInput]
-  deleteMany: [LogScalarWhereInput]
-  disconnect: [LogWhereUniqueInput]
-  set: [LogWhereUniqueInput]
-  update: [LogUpdateWithWhereUniqueWithoutAuthorInput]
-  updateMany: [LogUpdateManyWithWhereWithoutAuthorInput]
-  upsert: [LogUpsertWithWhereUniqueWithoutAuthorInput]
-}
-
-input LogUpdateWithWhereUniqueWithoutAuthorInput {
-  data: LogUncheckedUpdateWithoutAuthorInput!
-  where: LogWhereUniqueInput!
-}
-
-input LogUpdateWithoutAuthorInput {
-  createdAt: DateTimeFieldUpdateOperationsInput
-  title: StringFieldUpdateOperationsInput
-  updatedAt: DateTimeFieldUpdateOperationsInput
-}
-
-input LogUpsertWithWhereUniqueWithoutAuthorInput {
-  create: LogUncheckedCreateWithoutAuthorInput!
-  update: LogUncheckedUpdateWithoutAuthorInput!
-  where: LogWhereUniqueInput!
-}
-
-input LogWhereInput {
-  AND: [LogWhereInput]
-  NOT: [LogWhereInput]
-  OR: [LogWhereInput]
-  author: AdminWhereInput
-  authorId: IntNullableFilter
-  createdAt: DateTimeFilter
-  id: IntFilter
-  title: StringFilter
-  updatedAt: DateTimeFilter
-}
-
-input LogWhereUniqueInput {
-  id: Int
-}
-
 type Model {
   create: Boolean!
   delete: Boolean!
@@ -1229,46 +772,34 @@ type Model {
 }
 
 type Mutation {
-  createOneAdmin(data: AdminCreateInput!): Admin!
   createOneComment(data: CommentCreateInput!): Comment!
   createOneGroup(data: GroupCreateInput!): Group!
-  createOneLog(data: LogCreateInput!): Log!
   createOnePost(data: PostCreateInput!): Post!
   createOneUser(data: UserCreateInput!): User!
-  deleteManyAdmin(where: AdminWhereInput): BatchPayload!
   deleteManyComment(where: CommentWhereInput): BatchPayload!
   deleteManyGroup(where: GroupWhereInput): BatchPayload!
-  deleteManyLog(where: LogWhereInput): BatchPayload!
   deleteManyPost(where: PostWhereInput): BatchPayload!
   deleteManyUser(where: UserWhereInput): BatchPayload!
-  deleteOneAdmin(where: AdminWhereUniqueInput!): Admin
   deleteOneComment(where: CommentWhereUniqueInput!): Comment
   deleteOneGroup(where: GroupWhereUniqueInput!): Group
-  deleteOneLog(where: LogWhereUniqueInput!): Log
   deleteOnePost(where: PostWhereUniqueInput!): Post
   deleteOneUser(where: UserWhereUniqueInput!): User
   login(email: String!, password: String!): User
   logout: Boolean
   signup(email: String!, name: String, password: String!): User
   updateField(data: UpdateFieldInput!, id: String!, modelId: String!): Field!
-  updateManyAdmin(data: AdminUpdateManyMutationInput!, where: AdminWhereInput): BatchPayload!
   updateManyComment(data: CommentUpdateManyMutationInput!, where: CommentWhereInput): BatchPayload!
   updateManyGroup(data: GroupUpdateManyMutationInput!, where: GroupWhereInput): BatchPayload!
-  updateManyLog(data: LogUpdateManyMutationInput!, where: LogWhereInput): BatchPayload!
   updateManyPost(data: PostUpdateManyMutationInput!, where: PostWhereInput): BatchPayload!
   updateManyUser(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   updateModel(data: UpdateModelInput!, id: String!): Model!
-  updateOneAdmin(data: AdminUpdateInput!, where: AdminWhereUniqueInput!): Admin!
   updateOneComment(data: CommentUpdateInput!, where: CommentWhereUniqueInput!): Comment!
   updateOneGroup(data: GroupUpdateInput!, where: GroupWhereUniqueInput!): Group!
-  updateOneLog(data: LogUpdateInput!, where: LogWhereUniqueInput!): Log!
   updateOnePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post!
   updateOneUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User!
   updatePassword(currentPassword: String!, password: String!): Boolean
-  upsertOneAdmin(create: AdminCreateInput!, update: AdminUpdateInput!, where: AdminWhereUniqueInput!): Admin!
   upsertOneComment(create: CommentCreateInput!, update: CommentUpdateInput!, where: CommentWhereUniqueInput!): Comment!
   upsertOneGroup(create: GroupCreateInput!, update: GroupUpdateInput!, where: GroupWhereUniqueInput!): Group!
-  upsertOneLog(create: LogCreateInput!, update: LogUpdateInput!, where: LogWhereUniqueInput!): Log!
   upsertOnePost(create: PostCreateInput!, update: PostUpdateInput!, where: PostWhereUniqueInput!): Post!
   upsertOneUser(create: UserCreateInput!, update: UserUpdateInput!, where: UserWhereUniqueInput!): User!
 }
@@ -1484,6 +1015,7 @@ input NullableStringFieldUpdateOperationsInput {
 }
 
 type Post {
+  _count: PostCountOutputType
   author: User
   authorId: Int
   comments(cursor: CommentWhereUniqueInput, distinct: CommentScalarFieldEnum, orderBy: CommentOrderByInput, skip: Int, take: Int, where: CommentWhereInput): [Comment!]!
@@ -1507,6 +1039,10 @@ type PostCountAggregateOutputType {
   published: Int!
   title: Int!
   updatedAt: Int!
+}
+
+type PostCountOutputType {
+  comments: Int!
 }
 
 input PostCreateInput {
@@ -1817,34 +1353,24 @@ input PostWhereUniqueInput {
 }
 
 type Query {
-  aggregateAdmin(cursor: AdminWhereUniqueInput, distinct: AdminScalarFieldEnum, orderBy: [AdminOrderByInput], skip: Int, take: Int, where: AdminWhereInput): AggregateAdmin
   aggregateComment(cursor: CommentWhereUniqueInput, distinct: CommentScalarFieldEnum, orderBy: [CommentOrderByInput], skip: Int, take: Int, where: CommentWhereInput): AggregateComment
   aggregateGroup(cursor: GroupWhereUniqueInput, distinct: GroupScalarFieldEnum, orderBy: [GroupOrderByInput], skip: Int, take: Int, where: GroupWhereInput): AggregateGroup
-  aggregateLog(cursor: LogWhereUniqueInput, distinct: LogScalarFieldEnum, orderBy: [LogOrderByInput], skip: Int, take: Int, where: LogWhereInput): AggregateLog
   aggregatePost(cursor: PostWhereUniqueInput, distinct: PostScalarFieldEnum, orderBy: [PostOrderByInput], skip: Int, take: Int, where: PostWhereInput): AggregatePost
   aggregateUser(cursor: UserWhereUniqueInput, distinct: UserScalarFieldEnum, orderBy: [UserOrderByInput], skip: Int, take: Int, where: UserWhereInput): AggregateUser
-  findFirstAdmin(cursor: AdminWhereUniqueInput, distinct: AdminScalarFieldEnum, orderBy: [AdminOrderByInput], skip: Int, take: Int, where: AdminWhereInput): Admin
   findFirstComment(cursor: CommentWhereUniqueInput, distinct: CommentScalarFieldEnum, orderBy: [CommentOrderByInput], skip: Int, take: Int, where: CommentWhereInput): Comment
   findFirstGroup(cursor: GroupWhereUniqueInput, distinct: GroupScalarFieldEnum, orderBy: [GroupOrderByInput], skip: Int, take: Int, where: GroupWhereInput): Group
-  findFirstLog(cursor: LogWhereUniqueInput, distinct: LogScalarFieldEnum, orderBy: [LogOrderByInput], skip: Int, take: Int, where: LogWhereInput): Log
   findFirstPost(cursor: PostWhereUniqueInput, distinct: PostScalarFieldEnum, orderBy: [PostOrderByInput], skip: Int, take: Int, where: PostWhereInput): Post
   findFirstUser(cursor: UserWhereUniqueInput, distinct: UserScalarFieldEnum, orderBy: [UserOrderByInput], skip: Int, take: Int, where: UserWhereInput): User
-  findManyAdmin(cursor: AdminWhereUniqueInput, distinct: AdminScalarFieldEnum, orderBy: [AdminOrderByInput], skip: Int, take: Int, where: AdminWhereInput): [Admin!]!
-  findManyAdminCount(cursor: AdminWhereUniqueInput, distinct: AdminScalarFieldEnum, orderBy: [AdminOrderByInput], skip: Int, take: Int, where: AdminWhereInput): Int!
   findManyComment(cursor: CommentWhereUniqueInput, distinct: CommentScalarFieldEnum, orderBy: [CommentOrderByInput], skip: Int, take: Int, where: CommentWhereInput): [Comment!]!
   findManyCommentCount(cursor: CommentWhereUniqueInput, distinct: CommentScalarFieldEnum, orderBy: [CommentOrderByInput], skip: Int, take: Int, where: CommentWhereInput): Int!
   findManyGroup(cursor: GroupWhereUniqueInput, distinct: GroupScalarFieldEnum, orderBy: [GroupOrderByInput], skip: Int, take: Int, where: GroupWhereInput): [Group!]!
   findManyGroupCount(cursor: GroupWhereUniqueInput, distinct: GroupScalarFieldEnum, orderBy: [GroupOrderByInput], skip: Int, take: Int, where: GroupWhereInput): Int!
-  findManyLog(cursor: LogWhereUniqueInput, distinct: LogScalarFieldEnum, orderBy: [LogOrderByInput], skip: Int, take: Int, where: LogWhereInput): [Log!]!
-  findManyLogCount(cursor: LogWhereUniqueInput, distinct: LogScalarFieldEnum, orderBy: [LogOrderByInput], skip: Int, take: Int, where: LogWhereInput): Int!
   findManyPost(cursor: PostWhereUniqueInput, distinct: PostScalarFieldEnum, orderBy: [PostOrderByInput], skip: Int, take: Int, where: PostWhereInput): [Post!]!
   findManyPostCount(cursor: PostWhereUniqueInput, distinct: PostScalarFieldEnum, orderBy: [PostOrderByInput], skip: Int, take: Int, where: PostWhereInput): Int!
   findManyUser(cursor: UserWhereUniqueInput, distinct: UserScalarFieldEnum, orderBy: [UserOrderByInput], skip: Int, take: Int, where: UserWhereInput): [User!]!
   findManyUserCount(cursor: UserWhereUniqueInput, distinct: UserScalarFieldEnum, orderBy: [UserOrderByInput], skip: Int, take: Int, where: UserWhereInput): Int!
-  findUniqueAdmin(where: AdminWhereUniqueInput!): Admin
   findUniqueComment(where: CommentWhereUniqueInput!): Comment
   findUniqueGroup(where: GroupWhereUniqueInput!): Group
-  findUniqueLog(where: LogWhereUniqueInput!): Log
   findUniquePost(where: PostWhereUniqueInput!): Post
   findUniqueUser(where: UserWhereUniqueInput!): User
   getSchema: Schema!
@@ -1965,6 +1491,7 @@ input UpdateModelInput {
 }
 
 type User {
+  _count: UserCountOutputType
   comments(cursor: CommentWhereUniqueInput, distinct: CommentScalarFieldEnum, orderBy: CommentOrderByInput, skip: Int, take: Int, where: CommentWhereInput): [Comment!]!
   createdAt: DateTime!
   email: String!
@@ -1989,6 +1516,11 @@ type UserCountAggregateOutputType {
   id: Int!
   name: Int!
   password: Int!
+}
+
+type UserCountOutputType {
+  comments: Int!
+  posts: Int!
 }
 
 input UserCreateInput {

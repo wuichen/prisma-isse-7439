@@ -6,7 +6,7 @@ export const PostUpdateManyMutation = mutationField('updateManyPost', {
     where: 'PostWhereInput',
     data: nonNull('PostUpdateManyMutationInput'),
   },
-  resolve(_parent, args, { prisma1 }) {
-    return prisma1.post.updateMany(args as any)
+  resolve(_parent, args, { prisma }) {
+    return prisma.post.updateMany(args as any)
   },
 })

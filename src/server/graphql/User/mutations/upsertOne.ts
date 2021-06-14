@@ -7,8 +7,8 @@ export const UserUpsertOneMutation = mutationField('upsertOneUser', {
     create: nonNull('UserCreateInput'),
     update: nonNull('UserUpdateInput'),
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.user.upsert({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.user.upsert({
       ...args,
       ...select,
     })

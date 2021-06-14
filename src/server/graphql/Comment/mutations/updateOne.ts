@@ -6,8 +6,8 @@ export const CommentUpdateOneMutation = mutationField('updateOneComment', {
     where: nonNull('CommentWhereUniqueInput'),
     data: nonNull('CommentUpdateInput'),
   },
-  resolve(_parent, { data, where }, { prisma1, select }) {
-    return prisma1.comment.update({
+  resolve(_parent, { data, where }, { prisma, select }) {
+    return prisma.comment.update({
       where,
       data,
       ...select,

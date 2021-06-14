@@ -7,8 +7,8 @@ export const PostUpsertOneMutation = mutationField('upsertOnePost', {
     create: nonNull('PostCreateInput'),
     update: nonNull('PostUpdateInput'),
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.post.upsert({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.post.upsert({
       ...args,
       ...select,
     })

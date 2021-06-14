@@ -6,7 +6,7 @@ export const GroupUpdateManyMutation = mutationField('updateManyGroup', {
     where: 'GroupWhereInput',
     data: nonNull('GroupUpdateManyMutationInput'),
   },
-  resolve(_parent, args, { prisma1 }) {
-    return prisma1.group.updateMany(args as any)
+  resolve(_parent, args, { prisma }) {
+    return prisma.group.updateMany(args as any)
   },
 })

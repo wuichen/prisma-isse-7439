@@ -2,16 +2,13 @@ import { makeSchema } from 'nexus'
 import * as types from './graphql'
 import { paljs } from '@paljs/nexus'
 import { join } from 'path'
-import { Prisma as Prisma1 } from '../../prisma1/client'
-import { Prisma as Prisma2 } from '../../prisma2/client'
-
+import { Prisma } from '../../prisma/client'
 export const schema = makeSchema({
   types,
   plugins: [
     paljs({
+      dmmf: [Prisma.dmmf],
       includeAdmin: true,
-      dmmf: [Prisma1.dmmf, Prisma2.dmmf],
-      prismaSelectOptions: { dmmf: [Prisma1.dmmf, Prisma2.dmmf] },
     }),
   ],
   outputs: {

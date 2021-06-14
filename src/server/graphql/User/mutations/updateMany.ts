@@ -6,7 +6,7 @@ export const UserUpdateManyMutation = mutationField('updateManyUser', {
     where: 'UserWhereInput',
     data: nonNull('UserUpdateManyMutationInput'),
   },
-  resolve(_parent, args, { prisma1 }) {
-    return prisma1.user.updateMany(args as any)
+  resolve(_parent, args, { prisma }) {
+    return prisma.user.updateMany(args as any)
   },
 })

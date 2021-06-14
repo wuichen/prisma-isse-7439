@@ -6,7 +6,7 @@ export const CommentUpdateManyMutation = mutationField('updateManyComment', {
     where: 'CommentWhereInput',
     data: nonNull('CommentUpdateManyMutationInput'),
   },
-  resolve(_parent, args, { prisma1 }) {
-    return prisma1.comment.updateMany(args as any)
+  resolve(_parent, args, { prisma }) {
+    return prisma.comment.updateMany(args as any)
   },
 })

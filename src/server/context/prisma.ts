@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma as PrismaTypes } from '../../../prisma1/client'
+import { PrismaClient, Prisma as PrismaTypes } from '../../../prisma/client'
 import { PrismaDelete, onDeleteArgs } from '@paljs/plugins'
 
 class Prisma extends PrismaClient {
@@ -17,17 +17,17 @@ class Prisma extends PrismaClient {
 let db: Prisma
 if (process.env.NODE_ENV === 'production') {
   db = new Prisma()
-  console.log('Production: Created DB1 connection.')
+  console.log('Production: Created DB connection.')
 } else {
   // @ts-ignore
-  if (!global.db1) {
+  if (!global.db) {
     // @ts-ignore
-    global.db1 = new Prisma()
-    console.log('Development: Created DB1 connection.')
+    global.db = new Prisma()
+    console.log('Development: Created DB connection.')
   }
 
   // @ts-ignore
-  db = global.db1
+  db = global.db
 }
 
 db.$executeRaw('PRAGMA foreign_keys = ON')

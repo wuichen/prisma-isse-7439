@@ -10,7 +10,7 @@ export const UserFindCountQuery = queryField('findManyUserCount', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1 }) {
-    return prisma1.user.count(args as any)
+  resolve(_parent, args, { prisma }) {
+    return prisma.user.count(args as any)
   },
 })

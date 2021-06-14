@@ -10,8 +10,8 @@ export const CommentFindFirstQuery = queryField('findFirstComment', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.comment.findFirst({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.comment.findFirst({
       ...args,
       ...select,
     })

@@ -10,8 +10,8 @@ export const UserFindFirstQuery = queryField('findFirstUser', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.user.findFirst({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.user.findFirst({
       ...args,
       ...select,
     })

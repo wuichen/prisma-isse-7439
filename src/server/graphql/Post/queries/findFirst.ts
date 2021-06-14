@@ -10,8 +10,8 @@ export const PostFindFirstQuery = queryField('findFirstPost', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1, select }) {
-    return prisma1.post.findFirst({
+  resolve(_parent, args, { prisma, select }) {
+    return prisma.post.findFirst({
       ...args,
       ...select,
     })

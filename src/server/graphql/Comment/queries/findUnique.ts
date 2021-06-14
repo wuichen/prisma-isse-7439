@@ -5,8 +5,8 @@ export const CommentFindUniqueQuery = queryField('findUniqueComment', {
   args: {
     where: nonNull('CommentWhereUniqueInput'),
   },
-  resolve(_parent, { where }, { prisma1, select }) {
-    return prisma1.comment.findUnique({
+  resolve(_parent, { where }, { prisma, select }) {
+    return prisma.comment.findUnique({
       where,
       ...select,
     })

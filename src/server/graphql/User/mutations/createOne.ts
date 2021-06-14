@@ -5,8 +5,8 @@ export const UserCreateOneMutation = mutationField('createOneUser', {
   args: {
     data: nonNull('UserCreateInput'),
   },
-  resolve(_parent, { data }, { prisma1, select }) {
-    return prisma1.user.create({
+  resolve(_parent, { data }, { prisma, select }) {
+    return prisma.user.create({
       data,
       ...select,
     })

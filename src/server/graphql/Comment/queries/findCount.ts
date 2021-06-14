@@ -10,7 +10,7 @@ export const CommentFindCountQuery = queryField('findManyCommentCount', {
     skip: 'Int',
     take: 'Int',
   },
-  resolve(_parent, args, { prisma1 }) {
-    return prisma1.comment.count(args as any)
+  resolve(_parent, args, { prisma }) {
+    return prisma.comment.count(args as any)
   },
 })

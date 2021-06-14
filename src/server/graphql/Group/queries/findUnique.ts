@@ -5,8 +5,8 @@ export const GroupFindUniqueQuery = queryField('findUniqueGroup', {
   args: {
     where: nonNull('GroupWhereUniqueInput'),
   },
-  resolve(_parent, { where }, { prisma1, select }) {
-    return prisma1.group.findUnique({
+  resolve(_parent, { where }, { prisma, select }) {
+    return prisma.group.findUnique({
       where,
       ...select,
     })
